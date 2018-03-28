@@ -1,6 +1,8 @@
 package com.example.palakdhingra.agroinc;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +33,8 @@ public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListData
     @Override
     public void onBindViewHolder(SingleItemRowHolder holder, int position) {
         SingleItemModel itemModel = itemModels.get(position);
-        holder.tvTitle.setText(itemModel.getName());
+        holder.tvTitle.setText(itemModel.getHeader1());
+        holder.itemImage.setImageResource(itemModel.getImage());
     }
 
     @Override
@@ -51,7 +54,21 @@ public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListData
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Intent i = new Intent(view.getContext(),ShowAgriData.class);
+                    i.putExtra("header2",itemModels.get(getAdapterPosition()).getHeader2());
+                    i.putExtra("header1",itemModels.get(getAdapterPosition()).getHeader1());
+                    i.putExtra("header3",itemModels.get(getAdapterPosition()).getHeader3());
+                    i.putExtra("header4",itemModels.get(getAdapterPosition()).getHeader4());
+                    i.putExtra("header5",itemModels.get(getAdapterPosition()).getHeader5());
+                    i.putExtra("header6",itemModels.get(getAdapterPosition()).getHeader6());
+                    Bundle bundle=new Bundle();
+                    bundle.putInt("image",itemModels.get(getAdapterPosition()).getImage());
+                    i.putExtras(bundle);
+
+                    mContext.startActivity(i);
                     Toast.makeText(view.getContext(), tvTitle.getText(), Toast.LENGTH_SHORT).show();
+
+
                 }
             });
         }

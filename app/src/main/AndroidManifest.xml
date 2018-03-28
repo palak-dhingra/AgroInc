@@ -21,6 +21,7 @@
             android:label="Agricultre Library" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".ShowAgriData"></activity>
     </application>
 
 </manifest>

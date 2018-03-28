@@ -1,38 +1,60 @@
 package com.example.palakdhingra.agroinc;
 
+
+
 public class SingleItemModel {
-    private String name, url, description;
-
-    public SingleItemModel() {
-
+    private String header1, header2, header3,header4,header5,header6;
+    private int mImageResourceId;
+    public SingleItemModel(String h1data, String h2data, String h3data , String h4data ,String h5data, String h6data, int image) {
+        header1 = h1data;
+        header2 = h2data;
+        header3 = h3data;
+        header4 = h4data;
+        header5 = h5data;
+        header6 = h6data;
+        mImageResourceId = image;
     }
 
-    public SingleItemModel(String name, String url) {
-        this.name = name;
-        this.url = url;
+    public SingleItemModel(String h1data, String h2data, String h3data , String h4data ,String h5data, String h6data) {
+         header1 = h1data;
+         header2 = h2data;
+         header3 = h3data;
+         header4 = h4data;
+         header5 = h5data;
+         header6 = h6data;
     }
 
-    public String getName() {
-        return name;
+    public String getHeader1() {
+        return header1;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHeader1(String name) {
+        header1 = name;
     }
 
-    public String getUrl() {
-        return url;
+    public String getHeader2() {
+        return header2;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setHeader2(String url) {
+        header2 = url;
     }
-
-    public String getDescription() {
-        return description;
+    public String getHeader3() {
+        return header4;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public String getHeader4() {
+        return header4;
+    }
+    public String getHeader5() {
+        return header5;
+    }
+    public String getHeader6() {
+        return header6;
+    }
+    public int getImage() {
+        return mImageResourceId;
+    }
+    public void setHeader3(String description) {
+        this.header3 = description;
     }
 }

@@ -23,7 +23,7 @@ import android.support.v4.app.FragmentPagerAdapter;
  * Provides the appropriate {@link Fragment} for a view pager.
  */
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
-    private String tabTitles[] = new String[] { "Weather", "Main Menu","Sensor" };
+    private String tabTitles[] = new String[] { "Camera","Main Menu", "Weather","Sensor" };
     public SimpleFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -32,8 +32,10 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         if (position == 1) {
             return new MainFragment();
-        } else if (position == 0){
+        } else if (position == 2){
             return new WeatherFragment();
+        } else if (position == 0){
+            return new CameraActivity();
         } else {
             return new SensorFragment();
         }
@@ -41,7 +43,7 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 
     @Override
