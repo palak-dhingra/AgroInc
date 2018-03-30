@@ -40,7 +40,7 @@ public class SingleItemModel {
         header2 = url;
     }
     public String getHeader3() {
-        return header4;
+        return header3;
     }
     public String getHeader4() {
         return header4;
